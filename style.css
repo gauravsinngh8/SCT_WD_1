@@ -1,0 +1,100 @@
+/* Reset default margin & padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+  z-index: 1000;
+  transform: translateY(-100%);
+  animation: slideDown 1s forwards;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+  }
+}
+
+header.scrolled {
+  background-color: #111;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  list-style: none;
+  background-color: inherit;
+}
+
+.nav-menu li {
+  margin: 0 1rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #00ffff;
+  background: #222;
+  border-radius: 5px;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #0099ff, #00cc99);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  padding: 100px 20px;
+  background: #f4f4f4;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInLeft 1s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
